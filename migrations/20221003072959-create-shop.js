@@ -32,6 +32,8 @@ module.exports = {
       await queryInterface.addIndex('Shops', ['address']);
       await queryInterface.addIndex('Shops', ['created_at']);
       await queryInterface.addIndex('Shops', ['updated_at']);
+
+      await transaction.commit();
     } catch (e) {
       await transaction.rollback();
     }
@@ -46,6 +48,8 @@ module.exports = {
       await queryInterface.removeIndex('Shops', ['address']);
       await queryInterface.removeIndex('Shops', ['created_at']);
       await queryInterface.removeIndex('Shops', ['updated_at']);
+
+      await transaction.commit();
     } catch (e) {
       await transaction.rollback();
     }

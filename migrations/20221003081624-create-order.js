@@ -50,6 +50,8 @@ module.exports = {
       await queryInterface.addIndex('Orders', ['user_id']);
       await queryInterface.addIndex('Orders', ['created_at']);
       await queryInterface.addIndex('Orders', ['updated_at']);
+
+      await transaction.commit();
     } catch (e) {
       await transaction.rollback();
     }
@@ -65,6 +67,8 @@ module.exports = {
       await queryInterface.removeIndex('Orders', ['user_id']);
       await queryInterface.removeIndex('Orders', ['created_at']);
       await queryInterface.removeIndex('Orders', ['updated_at']);
+
+      await transaction.commit();
     } catch (e) {
       await transaction.rollback();
     }
