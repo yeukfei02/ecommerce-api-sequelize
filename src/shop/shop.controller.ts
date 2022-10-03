@@ -16,7 +16,7 @@ export class ShopController {
   constructor(private readonly shopService: ShopService) {}
 
   @Post()
-  async signup(@Body() createShopDto: CreateShopDto) {
+  async createShop(@Body() createShopDto: CreateShopDto) {
     if (createShopDto.name && createShopDto.address) {
       const shop = await this.shopService.createShop(
         createShopDto.name,

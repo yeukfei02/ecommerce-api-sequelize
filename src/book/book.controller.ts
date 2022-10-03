@@ -16,7 +16,7 @@ export class BookController {
   constructor(private readonly bookService: BookService) {}
 
   @Post()
-  async signup(@Body() createBookDto: CreateBookDto) {
+  async createBook(@Body() createBookDto: CreateBookDto) {
     if (
       createBookDto.name &&
       createBookDto.author &&
