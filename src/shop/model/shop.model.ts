@@ -2,24 +2,20 @@ import {
   Column,
   Model,
   Table,
-  AllowNull,
   CreatedAt,
   UpdatedAt,
   HasMany,
 } from 'sequelize-typescript';
-import { Shop } from '../../shop/model/shop.model';
 import { Book } from '../../book/model/book.model';
 import { Order } from '../../order/model/order.model';
 
 @Table
-export class User extends Model {
-  @AllowNull(false)
+export class Shop extends Model {
   @Column
-  email: string;
+  name: string;
 
-  @AllowNull(false)
   @Column
-  password: string;
+  address: string;
 
   @CreatedAt
   @Column
@@ -28,9 +24,6 @@ export class User extends Model {
   @UpdatedAt
   @Column
   updated_at: Date;
-
-  @HasMany(() => Shop)
-  shops: Shop[];
 
   @HasMany(() => Book)
   books: Book[];
