@@ -2,6 +2,8 @@
 
 ecommerce-api-sequelize
 
+documentation: <https://documenter.getpostman.com/view/3827865/2s83tJFVPm>
+
 ## Requirement
 
 - install yarn
