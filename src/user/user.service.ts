@@ -33,4 +33,14 @@ export class UserService {
 
     return result;
   }
+
+  async getUsers() {
+    const users = await this.userModel.findAll();
+    return users;
+  }
+
+  async getUserById(id: number) {
+    const user = await this.userModel.findOne({ where: { id: id } });
+    return user;
+  }
 }

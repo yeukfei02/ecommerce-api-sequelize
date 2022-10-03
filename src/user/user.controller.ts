@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { SignupDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
@@ -54,6 +54,31 @@ export class UserController {
         };
       }
     }
+
+    return response;
+  }
+
+  @Get()
+  async getUsers() {
+    const users = await this.userService.getUsers();
+
+    const response = {
+      message: 'getUsers',
+      users: users,
+    };
+
+    return response;
+  }
+
+  @Get(':id')
+  async getUserById(@Param('id') id: string) {
+    const idNum = parseInt(id, 10);
+    const user = await this.userService.getUserById(idNum);
+
+    const response = {
+      message: 'getUser',
+      user: user,
+    };
 
     return response;
   }
