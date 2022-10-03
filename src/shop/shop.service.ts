@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Shop } from './model/shop.model';
+import { Book } from '../book/model/book.model';
+import { Order } from '../order/model/order.model';
 
 @Injectable()
 export class ShopService {
@@ -15,12 +17,17 @@ export class ShopService {
   }
 
   async getShops() {
-    const shops = await this.shopModel.findAll();
+    const shops = await this.shopModel.findAll({
+      include: [Book, Order],
+    });
     return shops;
   }
 
   async getShopById(id: number) {
-    const shop = await this.shopModel.findOne({ where: { id: id } });
+    const shop = await this.shopModel.findOne({
+      where: { id: id },
+      include: [Book, Order],
+    });
     return shop;
   }
 
