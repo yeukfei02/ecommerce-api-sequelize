@@ -16,10 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       author: DataTypes.STRING,
-      price: DataTypes.NUMBER,
-      quantity: DataTypes.NUMBER,
-      shop_id: DataTypes.NUMBER,
-      user_id: DataTypes.NUMBER,
+      price: DataTypes.FLOAT,
+      quantity: DataTypes.INTEGER,
+      shop_id: DataTypes.INTEGER,
+      user_id: DataTypes.INTEGER,
     },
     {
       sequelize,

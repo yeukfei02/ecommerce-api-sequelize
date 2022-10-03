@@ -19,30 +19,16 @@ module.exports = {
           type: Sequelize.STRING,
         },
         price: {
-          type: Sequelize.NUMBER,
+          type: Sequelize.FLOAT,
         },
         quantity: {
-          type: Sequelize.NUMBER,
+          type: Sequelize.INTEGER,
         },
         shop_id: {
-          type: Sequelize.NUMBER,
-          references: {
-            model: {
-              tableName: 'Shops',
-              schema: 'schema',
-            },
-            key: 'id',
-          },
+          type: Sequelize.INTEGER,
         },
         user_id: {
-          type: Sequelize.NUMBER,
-          references: {
-            model: {
-              tableName: 'Users',
-              schema: 'schema',
-            },
-            key: 'id',
-          },
+          type: Sequelize.INTEGER,
         },
         created_at: {
           allowNull: false,

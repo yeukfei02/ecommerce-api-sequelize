@@ -16,24 +16,10 @@ module.exports = {
           type: Sequelize.STRING,
         },
         shop_id: {
-          type: Sequelize.NUMBER,
-          references: {
-            model: {
-              tableName: 'Shops',
-              schema: 'schema',
-            },
-            key: 'id',
-          },
+          type: Sequelize.INTEGER,
         },
         user_id: {
-          type: Sequelize.NUMBER,
-          references: {
-            model: {
-              tableName: 'Users',
-              schema: 'schema',
-            },
-            key: 'id',
-          },
+          type: Sequelize.INTEGER,
         },
         created_at: {
           allowNull: false,
