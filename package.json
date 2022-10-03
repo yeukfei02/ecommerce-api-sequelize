@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-api-sequelize",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "repository": "https://github.com/yeukfei02/ecommerce-api-sequelize.git",
   "author": "Donald Wu <yeukfei02@gmail.com>",
