@@ -7,7 +7,6 @@ import {
   UpdatedAt,
   HasMany,
 } from 'sequelize-typescript';
-import { Shop } from '../../shop/model/shop.model';
 import { Book } from '../../book/model/book.model';
 import { Order } from '../../order/model/order.model';
 
@@ -28,9 +27,6 @@ export class User extends Model {
   @UpdatedAt
   @Column
   updated_at: Date;
-
-  @HasMany(() => Shop)
-  shops: Shop[];
 
   @HasMany(() => Book)
   books: Book[];
