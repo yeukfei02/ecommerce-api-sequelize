@@ -33,6 +33,24 @@ $ nest g controller <controller-name>
 
 // create service
 $ nest g service <service-name>
+
+// create migration file
+$ npx sequelize-cli model:generate --name <model-name> --attributes <attr:type>
+
+// run db migration
+$ yarn run db:migrate
+
+// undo db migration
+$ yarn run db:migrate:undo
+
+// check migrations status
+$ yarn run db:migrate:status
+
+// create seed file
+$ npx sequelize-cli seed:generate --name <seed-name>
+
+// seed data to database
+$ yarn run db:seed
 ```
 
 ## Docker
