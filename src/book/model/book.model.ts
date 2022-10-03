@@ -5,6 +5,7 @@ import {
   CreatedAt,
   UpdatedAt,
   BelongsTo,
+  ForeignKey,
 } from 'sequelize-typescript';
 import { User } from '../../user/model/user.model';
 import { Shop } from '../../shop/model/shop.model';
@@ -23,9 +24,11 @@ export class Book extends Model {
   @Column
   quantity: number;
 
+  @ForeignKey(() => Shop)
   @Column
   shop_id: number;
 
+  @ForeignKey(() => User)
   @Column
   user_id: number;
 
