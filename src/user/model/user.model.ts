@@ -6,6 +6,7 @@ import {
   CreatedAt,
   UpdatedAt,
   HasMany,
+  IsEmail,
 } from 'sequelize-typescript';
 import { Book } from '../../book/model/book.model';
 import { Order } from '../../order/model/order.model';
@@ -13,6 +14,7 @@ import { Order } from '../../order/model/order.model';
 @Table
 export class User extends Model {
   @AllowNull(false)
+  @IsEmail
   @Column
   email: string;
 
