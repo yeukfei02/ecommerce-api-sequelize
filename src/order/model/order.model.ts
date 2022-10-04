@@ -6,6 +6,7 @@ import {
   UpdatedAt,
   BelongsTo,
   ForeignKey,
+  IsInt,
 } from 'sequelize-typescript';
 import { User } from '../../user/model/user.model';
 import { Shop } from '../../shop/model/shop.model';
@@ -16,10 +17,12 @@ export class Order extends Model {
   order_detail: string;
 
   @ForeignKey(() => Shop)
+  @IsInt
   @Column
   shop_id: number;
 
   @ForeignKey(() => User)
+  @IsInt
   @Column
   user_id: number;
 
